@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.webtech.Mapper.UserMapper">
+    <select id="findCount" resultType="java.lang.Integer">
+        select count(*) from t_user
+    </select>
+    <select id="findById" resultType="com.example.webtech.entity.User">
+        select * from t_user where accountNum = #{accountNum}
+    </select>
+    <select id="login" resultType="com.example.webtech.entity.User">
+        select * from t_user where accountNum = #{accountNum} and password = #{password}
+    </select>
+    <select id="register" resultType="com.example.webtech.entity.User">
+        insert into t_user(accountNum,username,password) values (#{accountNum},#{username},#{password})
+    </select>
+</mapper>

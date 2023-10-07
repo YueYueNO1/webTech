@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工匠精神</title>
+    <link rel="stylesheet" type="text/css" href="css/com.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/swiper-4.3.3.min.css">
+    <script src="./js/swiper4-component/js/swiper.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        (function (win, doc) {
+            if (!win.addEventListener) return;
+            var html = document.documentElement;
+
+            function setFont() {
+                var html = document.documentElement;
+                var k = 1920;
+                var clientwidh = html.clientWidth < 1300 ? 1300 : html.clientWidth > 1920 ? 1920 : html.clientWidth;
+                html.style.fontSize = clientwidh / k * 100 + "px";
+            }
+
+            setFont();
+            setTimeout(function () {
+                setFont();
+            }, 300);
+            doc.addEventListener('DOMContentLoaded', setFont, false);
+            win.addEventListener('resize', setFont, false);
+            win.addEventListener('load', setFont, false);
+        })(window, document);
+    </script>
+</head>
+
+<body>
+    <div class="wraps">
+        <div class="topbar">
+            <a href="#" class="xlogo">logo</a>
+            <div class="topbar_nav">
+                <ul class="top_blist">
+                    <li class="active">
+                        <a href="index.html" onclick="this">首页</a>
+                    </li>
+                    <li>
+                        <a href="pages/news.html" onclick="this">新闻资讯</a>
+                    </li>
+                </ul>
+                <div class="top_slist">
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)" onclick="this">
+                                <span>微博</span>
+                            </a>
+                            <div class="weibo_f eritem">
+                                <a href="#">二维码</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" onclick="this">
+                                <span>微信</span>
+                            </a>
+                            <div class="weibo_f eritem">
+                                <img src="#">
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" onclick="this">
+                                <span>QQ</span>
+                            </a>
+                            <div class="qq_f eritem">
+                                <img src="#">
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" onclick="this">
+                                <span>客服</span>
+                            </a>
+                            <div class="kf_f eritem">
+                                <img src="#">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="loginState"></div>
+            <script type="module">
+                const el = document.getElementById("loginState")
+                const name = sessionStorage.getItem("user")
+
+                if (name) {
+                    const curTime = new Date().getHours()
+                    if (curTime < 11) {
+                        el.innerHTML = "上午好，" + name
+                    } else if (curTime < 14) {
+                        el.innerHTML = "中午好，" + name
+                    } else if (curTime < 17) {
+                        el.innerHTML = "下午好，" + name
+                    } else {
+                        el.innerHTML = "晚上好，" + name
+                    }
+                }
+                else {
+                    el.innerHTML = "<a href='login.html' style='color: #007aff'>请登录</a>"
+                }
+            </script>
+        </div>
+        <div class="main page1">
+            <div id="kv" style="padding-top: 100px">
+                <img class="Img_Img" src="img/view.jpg">
+            </div>
+            <div class="down_zone"></div>
+
+        </div>
+        <div class="main">
+            <div class="news_content>">
+                <div class="w1200 clearfix">
+                    <div class="left_banners">
+                        <div class="swiper-container swiper-banner swiper-container-horizontal left_swiper"
+                            id="news_swiper">
+                            <div class="swiper-wrapper" style="transition-duration: 0ms" ;>
+                                <div class="swiper-slide">
+                                    <img src="img/img0612.png" alt="" srcset="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/img061201.jpg" alt="" srcset="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/swiperImg/img0515.png" alt="" srcset="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/swiperImg/img051501.png" alt="" srcset="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/swiperImg/img051502.png" alt="" srcset="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/swiperImg/img051503.png" alt="" srcset="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/swiperImg/img051504.png" alt="" srcset="">
+                                </div>
+                            </div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div
+                                class="swiper-pagination swiper-pagination1 swiper-pagination-clickable swiper-pagination-bullets">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="left_news">
+                        <div class="news_navs clearfix">
+                            <ul>
+                                <li class="active" onclick="this">最新</li>
+                                <li class="news_news" onclick="this"><a href="pages/news.html">新闻</a></li>
+                                <li onclick="this">公告</li>
+                                <li onclick="this">活动</li>
+                            </ul>
+                        </div>
+                        <div class="new_contents">
+                            <div class="new_con">
+                                <ul style>
+                                    <li>
+                                        <a href="pages/new.html" target="_blank">
+                                            <span class="new_title">彰显工匠精神的新时代价值</span>
+                                            <span class="new_time">2022-07-09</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="pages/new.html" target="_blank">
+                                            <span class="new_title">工匠精神 匠心追梦技能报国</span>
+                                            <span class="new_time">2021-12-09</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="pages/new.html" target="_blank">
+                                            <span class="new_title">大力弘扬工匠精神，培养更多高技能人才和大国工匠
+                                                ——论中国共产党人的精神谱系之二十一</span>
+                                            <span class="new_time">2021-10-11</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="pages/new.html" target="_blank">
+                                            <span class="new_title">精益求精 勇于创新——工匠精神述评</span>
+                                            <span class="new_time">2021-09-27</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="pages/new.html" target="_blank">
+                                            <span class="new_title">论“工匠精神”</span>
+                                            <span class="new_time">2017-05-24</span>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                            <div class="new_con">
+                                <ul style="opacity: 0.001;transition-property: opacity;transition-duration: 0.5s"></ul>
+                            </div>
+                            <div class="new_con">
+                                <ul style="opacity: 0.001;transition-property: opacity;transition-duration: 0.5s"></ul>
+                            </div>
+                            <div class="new_con">
+                                <ul style="opacity: 0.001;transition-property: opacity;transition-duration: 0.5s;"></ul>
+                            </div>
+                        </div>
+                        <div class="more_news"><a href="pages/news.html" onclick="this"></a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main roles">
+
+                <div class="js_tz">
+                    <div class="js_title"><img src="img/juse_title.png"></div>
+                </div>
+                <div class="js_con">
+                    <div class="js_item">
+                        <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg1.jpg">
+                        <div class="rwtxt rwtxt1 fadeIn">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_txt1.png">
+                        </div>
+                        <div class="left_txt left_txt1">
+                            <div class="left_txt_ov">
+                                <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg1_t1.png">
+                            </div>
+                        </div>
+                        <div class="rwpic rwpic1">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg1_p1.png">
+                            <div class="rwpic_box1 ">
+                                <div class="rwtips1">
+                                <span>
+                                    <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg1_txt1.png">
+                                </span>
+                                </div>
+                                <div class="rwtips2pa">
+                                    <a href="javascript:void(0)" class="sounds" data-id="sound1">
+                                        <div class="music_content">
+                                            <div class="lins hei1 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei3 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei2 mov1"></div>
+                                            <div class="lins hei3 mov3"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei1 mov1"></div>
+                                        </div>
+                                        阿杰（中）
+                                        <audio src="//game.gtimg.cn/images/lv/web202106/sound_ajie.wav" volume='0.8'
+                                               id="sound1" class="audios"></audio>
+                                    </a>
+
+                                    <span>/</span>
+                                    <a href="javascript:void(0)" class="sounds" data-id="sound2">
+                                        <div class="music_content">
+                                            <div class="lins hei1 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei3 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei2 mov1"></div>
+                                            <div class="lins hei3 mov3"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei1 mov1"></div>
+                                        </div>
+                                        石川界人（日）
+                                        <audio src="//game.gtimg.cn/images/lv/web202106/sound_scjr.wav" volume='0.8'
+                                               id="sound2" class="audios"></audio>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="rwpic_box2">
+                                <div class="rwtips3">
+                                <span>
+                                    <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg1_txt3.png">
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lb1_tips1 lbtips">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg1_tips1.png">
+                        </div>
+                        <div class="lb1_tips2 lbtips">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg1_tips2.png">
+                        </div>
+                    </div>
+
+                    <div class="js_item">
+                        <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg2.jpg">
+                        <div class="rwtxt rwtxt2 fadeIn">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_txt2.png">
+                        </div>
+                        <div class="left_txt left_txt2">
+                            <div class="left_txt_ov">
+                                <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg2_t1.png">
+                            </div>
+                        </div>
+                        <div class="rwpic rwpic2">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg2_p1.png">
+                            <div class="rwpic_box1 ">
+                                <div class="rwtips1">
+                                <span>
+                                    <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg2_txt1.png">
+                                </span>
+                                </div>
+                                <div class="rwtips2pa">
+
+                                    <a href="javascript:void(0)" class="sounds" data-id="sound3">
+                                        <!-- <div class="music_content">
+                                            <div class="lins hei1 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei3 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei2 mov1"></div>
+                                            <div class="lins hei3 mov3"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei1 mov1"></div>
+                                        </div> -->
+                                        刘北辰（中）
+                                        <!-- <audio src="//game.gtimg.cn/images/lv/web202106/sound_lyt.wav" volume='0.8'
+                                            id="sound3" class="audios"></audio> -->
+                                    </a>
+
+                                    <span>/</span>
+                                    <a href="javascript:void(0)" class="sounds" data-id="sound4">
+                                        <div class="music_content">
+                                            <div class="lins hei1 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei3 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei2 mov1"></div>
+                                            <div class="lins hei3 mov3"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei1 mov1"></div>
+                                        </div>
+                                        森川智之（日）
+                                        <audio src="//game.gtimg.cn/images/lv/web202106/sound_sczz.wav" volume='0.8'
+                                               id="sound4" class="audios"></audio>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="rwpic_box2">
+                                <div class="rwtips3">
+                                <span>
+                                    <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg2_txt3.png">
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lb2_tips1 lbtips">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg2_tips1.png">
+                        </div>
+                        <div class="lb2_tips2 lbtips">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg2_tips2.png">
+                        </div>
+                    </div>
+
+                    <div class="js_item">
+                        <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg3.jpg">
+                        <div class="rwtxt rwtxt3 fadeIn">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_txt3.png">
+                        </div>
+                        <div class="left_txt left_txt3">
+                            <div class="left_txt_ov">
+                                <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg3_t1.png">
+                            </div>
+                        </div>
+                        <div class="rwpic rwpic3">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg3_p1.png">
+                            <div class="rwpic_box1 ">
+                                <div class="rwtips1">
+                                <span>
+                                    <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg3_txt1.png">
+                                </span>
+                                </div>
+                                <div class="rwtips2pa">
+                                    <a href="javascript:void(0)" class="sounds" data-id="sound5">
+                                        <div class="music_content">
+                                            <div class="lins hei1 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei3 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei2 mov1"></div>
+                                            <div class="lins hei3 mov3"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei1 mov1"></div>
+                                        </div>
+                                        赵路（中）
+                                        <audio src="//game.gtimg.cn/images/lv/web202106/sound_zl.wav" volume='0.8'
+                                               id="sound5" class="audios"></audio>
+                                    </a>
+
+                                    <span>/</span>
+                                    <a href="javascript:void(0)" class="sounds" data-id="sound6">
+                                        <div class="music_content">
+                                            <div class="lins hei1 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei3 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei2 mov1"></div>
+                                            <div class="lins hei3 mov3"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei1 mov1"></div>
+                                        </div>
+                                        岸尾大辅（日）
+                                        <audio src="//game.gtimg.cn/images/lv/web202106/sound_awdf.wav" volume='0.8'
+                                               id="sound6" class="audios"></audio>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="rwpic_box2">
+                                <div class="rwtips3">
+                                <span>
+                                    <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg3_txt3.png">
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lb3_tips1 lbtips">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg3_tips1.png">
+                        </div>
+                        <div class="lb3_tips2 lbtips">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg3_tips2.png">
+                        </div>
+                    </div>
+
+                    <div class="js_item">
+                        <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg4.jpg">
+                        <div class="rwtxt rwtxt4 fadeIn">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_txt4.png">
+                        </div>
+                        <div class="left_txt left_txt4">
+                            <div class="left_txt_ov">
+                                <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg4_t1.png">
+                            </div>
+                        </div>
+                        <div class="rwpic rwpic4">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg4_p1.png">
+                            <div class="rwpic_box1 ">
+                                <div class="rwtips1">
+                                <span>
+                                    <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg4_txt1.png">
+                                </span>
+                                </div>
+                                <div class="rwtips2pa">
+                                    <a href="javascript:void(0)" class="sounds" data-id="sound7">
+                                        <div class="music_content">
+                                            <div class="lins hei1 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei3 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei2 mov1"></div>
+                                            <div class="lins hei3 mov3"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei1 mov1"></div>
+                                        </div>
+                                        吴磊（中）
+                                        <audio src="//game.gtimg.cn/images/lv/web202106/sound_wl.wav" volume='0.8'
+                                               id="sound7" class="audios"></audio>
+                                    </a>
+                                    <span>/</span>
+                                    <a href="javascript:void(0)" class="sounds" data-id="sound8">
+                                        <div class="music_content">
+                                            <div class="lins hei1 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei3 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei2 mov1"></div>
+                                            <div class="lins hei3 mov3"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei1 mov1"></div>
+                                        </div>
+                                        细谷佳正（日）
+                                        <audio src="//game.gtimg.cn/images/lv/web202106/sound_xgjz.wav" volume='0.8'
+                                               id="sound8" class="audios"></audio>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="rwpic_box2">
+                                <div class="rwtips3">
+                                <span>
+                                    <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg4_txt3.png">
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lb4_tips1 lbtips">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg4_tips1.png">
+                        </div>
+                        <div class="lb4_tips2 lbtips">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg4_tips2.png">
+                        </div>
+                    </div>
+
+                    <div class="js_item">
+                        <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg5.jpg">
+                        <div class="rwtxt rwtxt5 fadeIn">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_txt5.png">
+                        </div>
+                        <div class="left_txt left_txt5">
+                            <div class="left_txt_ov">
+                                <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg5_t1.png">
+                            </div>
+                        </div>
+                        <div class="rwpic rwpic5">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg5_p1.png">
+                            <div class="rwpic_box1 ">
+                                <div class="rwtips1">
+                                <span>
+                                    <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg5_txt1.png">
+                                </span>
+                                </div>
+                                <div class="rwtips2pa">
+                                    <a href="javascript:void(0)" class="sounds" data-id="sound9">
+                                        <div class="music_content">
+                                            <div class="lins hei1 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei3 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei2 mov1"></div>
+                                            <div class="lins hei3 mov3"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei1 mov1"></div>
+                                        </div>
+                                        谷江山（中）
+                                        <audio src="//game.gtimg.cn/images/lv/web202106/sound_gjs.wav" volume='0.8'
+                                               id="sound9" class="audios"></audio>
+                                    </a>
+                                    <span>/</span>
+                                    <a href="javascript:void(0)" class="sounds" data-id="sound10">
+                                        <div class="music_content">
+                                            <div class="lins hei1 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei3 mov1"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei2 mov1"></div>
+                                            <div class="lins hei3 mov3"></div>
+                                            <div class="lins hei2 mov2"></div>
+                                            <div class="lins hei1 mov1"></div>
+                                        </div>
+                                        木村良平（日）
+                                        <audio src="//game.gtimg.cn/images/lv/web202106/sound_mclp.wav" volume='0.8'
+                                               id="sound10" class="audios"></audio>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="rwpic_box2">
+                                <div class="rwtips3">
+                                <span>
+                                    <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg5_txt3.png">
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lb5_tips1 lbtips">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg5_tips1.png">
+                        </div>
+                        <div class="lb5_tips2 lbtips">
+                            <img src="//game.gtimg.cn/images/lv/web202106/rw_lb_bg5_tips2.png">
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="js_nav">
+                    <ul>
+                        <li class="active" onClick="PTTSendClick('btn','role_btn_1','萧逸');">
+                        <span>
+                            萧逸
+                        </span>
+
+                            <div class="slice">
+                                OSBORN
+                            </div>
+                            <div class="nav_bg nav_bg1"></div>
+                        </li>
+                        <li onClick="PTTSendClick('btn','role_btn_2','陆沉');">
+                        <span>
+                            陆沉
+                        </span>
+
+                            <div class="slice">
+                                EVAN
+                            </div>
+                            <div class="nav_bg nav_bg2"></div>
+                        </li>
+                        <li onClick="PTTSendClick('btn','role_btn_3','齐司礼');">
+                        <span>
+                            齐司礼
+                        </span>
+
+                            <div class="slice">
+                                SARIEL
+                            </div>
+                            <div class="nav_bg nav_bg3"></div>
+                        </li>
+                        <li onClick="PTTSendClick('btn','role_btn_4','查理苏');">
+                        <span>
+                            查理苏
+                        </span>
+
+                            <div class="slice">
+                                CHARLIE
+                            </div>
+                            <div class="nav_bg nav_bg4"></div>
+                        </li>
+                        <li onClick="PTTSendClick('btn','role_btn_5','夏鸣星');">
+                        <span>
+                            夏鸣星
+                        </span>
+
+                            <div class="slice">
+                                JESSE
+                            </div>
+                            <div class="nav_bg nav_bg5"></div>
+                        </li>
+                    </ul>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        <style></style>
+        <div class="footers">
+            <div class="footer" id="gfooter" ams="58608/58610/m22190/" dark="0" ieg-logo="1">
+                <div class="foot">
+                    <div class="foot_cpright">
+                        <div class="foot_lefts">
+                            <div title="logo1" class="foot_left logo1"></div>
+                            <a target="_blank" rel="noopener" href="https://github.com/kiwilaen" title="kiwilaen"
+                                class="foot_ieg_logo">kiwilaen | github</a>
+                        </div>
+                        <ul class="foot_links">
+                            <li class="copyright_en">
+                                <p class="copyright_txt">COPYRIGHT © 1998 - 2022 Sariel. ALL RIGHTS RESERVED.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+<script src="./js/news_swiper.js"></script>
+
+</html>
